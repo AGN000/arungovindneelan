@@ -206,15 +206,18 @@
             font-size: 1.3rem; font-weight: 800; margin-bottom: 32px;
             display: flex; align-items: center; gap: 10px;
         }
-        .timeline-item { margin-bottom: 24px; padding-left: 8px; position: relative; }
-
+        .timeline-item {
+            margin-bottom: 20px; position: relative;
+            display: flex; align-items: flex-start; gap: 14px;
+        }
+        .tl-content { flex: 1; min-width: 0; }
         .timeline-dot {
-            width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
+            width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; margin-top: 4px;
             display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
         }
         .timeline-dot.blue { background: rgba(59,130,246,0.12); border: 2px solid rgba(59,130,246,0.3); }
         .timeline-dot.indigo { background: rgba(129,140,248,0.12); border: 2px solid rgba(129,140,248,0.3); }
-        .timeline-dot emerald { background: rgba(52,211,153,0.12); border: 2px solid rgba(52,211,153,0.3); }
+        .timeline-dot.emerald { background: rgba(52,211,153,0.12); border: 2px solid rgba(52,211,153,0.3); }
         .timeline-dot .inner { width: 8px; height: 8px; border-radius: 50%; }
         .timeline-dot.blue .inner { background: var(--accent); }
         .timeline-dot.indigo .inner { background: var(--indigo); }
@@ -468,11 +471,16 @@
         .pg6 { background: linear-gradient(135deg, #1a1a2e, #2d1400); }
         .pg7 { background: linear-gradient(135deg, #0a1628, #141e30); }
         .pg8 { background: linear-gradient(135deg, #162019, #0a1428); }
+        .pg9 { background: linear-gradient(135deg, #0d1b2a, #1a3052); }
+        .pg10 { background: linear-gradient(135deg, #1a0f2e, #0d1b3a); }
+        .pg11 { background: linear-gradient(135deg, #0a1f1c, #142d2e); }
         .pg-placeholder {
             width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
         }
         .pg-placeholder .icon { font-size: 3rem; opacity: 0.5; }
         .pg-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+        .pg-svg { width: 100%; height: 100%; padding: 18px; display: flex; align-items: center; justify-content: center; }
+        .pg-svg svg { width: 100%; height: 100%; max-width: 320px; }
     </style>
 </head>
 <body>
@@ -543,7 +551,7 @@
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#129302;</div>
                     <h3>AI Agents &amp; LLMs</h3>
-                    <p>Offline AI agents for automated scientific workflows. Fine-tuning CodeLlama with RAG, template-guided LLM pipelines optimized for limited-VRAM hardware, domain-specific model adaptation.</p>
+                    <p>Building offline AI agents that automate end-to-end scientific workflows—from problem setup to validated outputs. Leveraging RAG, template-guided generation, and fine-tuned models (e.g., CodeLlama) to deliver robust, low-hallucination results on resource-constrained hardware. Designed for reliable code generation, domain adaptation, and physics-informed reasoning.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#129304;</div>
@@ -806,6 +814,63 @@
                         <div class="ptags"><span class="ptag">CorrDiff</span><span class="ptag">GraphCast</span><span class="ptag">PG-LODE</span><span class="ptag">GNN</span></div>
                         <h3>AI Weather Modelling &amp; Nowcasting</h3>
                         <p>High-resolution weather downscaling using CorrDiff (diffusion models), GraphCast &amp; PG-LODE (spatiotemporal GNNs). Physics-guided latent dynamics for physically consistent regional forecasting.</p>
+                    </div>
+                </div>
+
+                <!-- Neural Turbulence Closures -->
+                <div class="project-card reveal" data-project="8">
+                    <div class="project-image pg5">
+                        <div class="pg-placeholder"><img src="https://lh3.googleusercontent.com/d/1Dptfr61ggc3OwmhkPDKn0qLPnOeFU5ZA" alt="Neural Turbulence Closures" loading="lazy"></div>
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">OpenFOAM</span><span class="ptag">ML</span><span class="ptag">Turbulence</span><span class="ptag">RANS</span></div>
+                        <h3>Neural Turbulence Closures for RANS (OpenFOAM Coupled)</h3>
+                        <p>Physics-informed TBNN closure for complex separated flows. Rebuilt the pipeline from scratch, achieving R² ≈ 0.95 velocity prediction in fully coupled OpenFOAM simulations. Identified the critical offline → coupled performance gap in ML-based turbulence modelling.</p>
+                    </div>
+                </div>
+
+                <!-- GNN-RL Adaptive Mesh Refinement -->
+                <div class="project-card reveal" data-project="9">
+                    <div class="project-image pg9">
+                        <img src="https://lh3.googleusercontent.com/d/13LYnbLBtW7HmEyGS_9cOEFYRX-z1XYXw" alt="GNN-RL AMR refined mesh" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">GNN</span><span class="ptag">PPO</span><span class="ptag">AMR</span><span class="ptag">PyTorch</span></div>
+                        <h3>GNN-RL Adaptive Mesh Refinement</h3>
+                        <p>Graph neural network policy trained with PPO that decides where to refine a quadtree mesh — beating the gradient heuristic by 24% on Gaussian peak benchmarks. Bridge to OpenFOAM cellSet refinement is in place.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/AGN000/gnn-rl-amr" target="_blank" rel="noreferrer" class="p-link github-link" onclick="event.stopPropagation()">&#9670; GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AeroFNO-LoRA -->
+                <div class="project-card reveal" data-project="10">
+                    <div class="project-image pg10">
+                        <img src="https://lh3.googleusercontent.com/d/1rcwkkplbmNJmyqwn2N0J6lw-1n14iEr6" alt="AeroFNO-LoRA results" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">FNO</span><span class="ptag">LoRA</span><span class="ptag">AirfRANS</span><span class="ptag">Shape Opt</span></div>
+                        <h3>AeroFNO-LoRA: Low-Rank Spectral Operators</h3>
+                        <p>LoRA-style factorization of FNO spectral weights. POD-init r=8 beats the dense baseline at 4× fewer parameters; r=2 matches dense at 16× compression. Drives a differentiable airfoil shape optimizer that runs in 1.7 s.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/AGN000/AeroFNO-LoRA" target="_blank" rel="noreferrer" class="p-link github-link" onclick="event.stopPropagation()">&#9670; GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Agent Workbench -->
+                <div class="project-card reveal" data-project="11">
+                    <div class="project-image pg11">
+                        <img src="https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh" alt="Multi-Agent Workbench UI" loading="lazy">
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">LLM</span><span class="ptag">vLLM</span><span class="ptag">FastAPI</span><span class="ptag">Multi-Agent</span></div>
+                        <h3>Multi-Agent Workbench</h3>
+                        <p>Worker–Critic loop where two local LLMs (Qwen3, Gemma) iteratively draft and refine answers. Web GUI to swap models, download from HuggingFace, manage vLLM servers, and stream both agents' tokens live via SSE.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/AGN000/multi-agent-workbench" target="_blank" rel="noreferrer" class="p-link github-link" onclick="event.stopPropagation()">&#9670; GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1085,9 +1150,13 @@
             "https://lh3.googleusercontent.com/d/1QBVVsJTrLR35CqqgIC-h32yoM_E8p5n1",
             "https://lh3.googleusercontent.com/d/1t93r6jnGbnl98umNpB7Dj6OXzNfEztQx",
             "https://lh3.googleusercontent.com/d/1wa9PUInBbsklYgfA1X0GlUV4yYdqSc0r",
-            "https://lh3.googleusercontent.com/d/18FEk_X1XO81TV2LlnuL1y8mqysgUaxES",
-            "https://img.youtube.com/vi/QYyMxU6s67A/maxresdefault.jpg",
-            "https://lh3.googleusercontent.com/d/1ZD4aMRlkVu_SYQ1UnHC0fWNVb2_fCGxz"
+            "https://lh3.googleusercontent.com/d/1Dptfr61ggc3OwmhkPDKn0qLPnOeFU5ZA",
+            "https://lh3.googleusercontent.com/d/1wXjj1HqLoI4IyYoreE18MI-XirqtDouF",
+            "https://lh3.googleusercontent.com/d/1ZD4aMRlkVu_SYQ1UnHC0fWNVb2_fCGxz",
+            "https://lh3.googleusercontent.com/d/1QBVVsJTrLR35CqqgIC-h32yoM_E8p5n1",
+            "https://lh3.googleusercontent.com/d/13LYnbLBtW7HmEyGS_9cOEFYRX-z1XYXw",
+            "https://lh3.googleusercontent.com/d/1rcwkkplbmNJmyqwn2N0J6lw-1n14iEr6",
+            "https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh"
         ];
 
         const projectsData = [
@@ -1131,7 +1200,7 @@
             },
             {
                 title: "Custom PDE Solver Development",
-                description: "<h4>The Innovation</h4><p>A novel adaptive-order WENO scheme that dynamically switches between 3rd and 5th order accuracy based on local flow smoothness — delivering sharper shocks at lower computational cost.</p><h4>What Makes It Different</h4><p>Unlike conventional WENO methods, this approach decouples smoothness indicators from nonlinear weights, ensuring better Taylor series consistency and improved convergence. The result: discontinuities are captured sharply while smooth regions maintain high-order accuracy.</p><h4>Extensions & Integration</h4><ul><li>AUSM+v2 flux schemes for robust compressible flow handling</li><li>PETSc-based implicit preconditioning for accelerated convergence</li><li>Deployed across OpenFOAM, SU2, and PyFR ecosystems</li></ul><div class=\"highlight\">Extensive validation on benchmark problems demonstrates superior accuracy with significantly reduced computational cost compared to classical schemes.</div>",
+                description: "<h4>The Innovation</h4><p>A novel adaptive-order WENO scheme that dynamically switches between 3rd and 5th order accuracy based on local flow smoothness — delivering sharper shocks at lower computational cost.</p><h4>What Makes It Different</h4><p>Unlike conventional WENO methods, this approach decouples smoothness indicators from nonlinear weights, ensuring better Taylor series consistency and improved convergence. The result: discontinuities are captured sharply while smooth regions maintain high-order accuracy.</p><div style=\"text-align:center;margin:16px 0;\"><img src=\"https://lh3.googleusercontent.com/d/1wXjj1HqLoI4IyYoreE18MI-XirqtDouF\" alt=\"WENO Scheme Visualization\" style=\"max-width:100%;border-radius:var(--radius);border:1px solid var(--border);\"></div><h4>Extensions &amp; Integration</h4><ul><li>AUSM+v2 flux schemes for robust compressible flow handling</li><li>PETSc-based implicit preconditioning for accelerated convergence</li><li>Deployed across OpenFOAM, SU2, and PyFR ecosystems</li></ul><div class=\"highlight\">Extensive validation on benchmark problems demonstrates superior accuracy with significantly reduced computational cost compared to classical schemes.</div>",
                 tags: ["PDE Solver", "WENO", "PETSc", "OpenFOAM", "SU2", "PyFR"],
                 demoLink: "https://www.youtube.com/watch?v=QYyMxU6s67A",
                 modelLink: "https://link.springer.com/article/10.1007/s40314-023-02214-z"
@@ -1140,8 +1209,166 @@
                 title: "AI Weather Modelling & Nowcasting",
                 description: "<h4>The Vision</h4><p>Bring real-time, high-resolution weather prediction to underserved regions by combining cutting-edge AI with atmospheric physics — no more black-box models that defy physical laws.</p><h4>The Pipeline</h4><p>A hybrid three-stage architecture that cascades global, regional, and local models for multi-scale accuracy:</p><ul><li><strong>GraphCast</strong> — Global-scale atmospheric prediction via graph neural networks, capturing large-scale dependencies across continents</li><li><strong>CorrDiff</strong> — Diffusion-based downscaling that converts coarse reanalysis data (ERA5) into high-resolution weather fields with sharp spatial detail</li><li><strong>PG-LODE</strong> — Physics-guided latent ODEs for short-term nowcasting (0–6 hours), ensuring temporally consistent and physically plausible evolution</li></ul><h4>Physics-First Approach</h4><div class=\"highlight\" style=\"font-style: italic;\">Filtering happens before ML, not after. Physics-guided filters (anisotropic diffusion, consistency constraints) remove satellite noise and non-physical artifacts from inputs, ensuring every downstream model operates on physically sound data.</div><h4>Real-World Impact</h4><p>Flood prediction, extreme weather alerts, aviation and maritime risk assessment, and India-focused regional forecasting for decision-support systems.</p>",
                 tags: ["CorrDiff", "GraphCast", "PG-LODE", "GNN", "Weather", "Diffusion Models"]
+            },
+            {
+                title: "Neural Turbulence Closures for RANS (OpenFOAM Coupled)",
+                    description: `
+<h4>Research Objective</h4>
+<img src="https://lh3.googleusercontent.com/d/1Dptfr61ggc3OwmhkPDKn0qLPnOeFU5ZA" alt="Neural Turbulence Closures" style="width:100%;max-height:240px;object-fit:cover;border-radius:var(--radius);margin:12px 0;border:1px solid var(--border);">
+<p>Developed a physics-informed, data-driven turbulence closure model based on a Tensor-Basis Neural Network (TBNN), designed for complex separated flows. The work focuses on reconstructing Reynolds-stress anisotropy from DNS data and deploying the model in a fully coupled OpenFOAM workflow for real-world CFD simulations.</p>
+
+<h4>Diagnosis &amp; Complete Rebuild</h4>
+<p>Starting from a non-functional legacy model, I performed a complete diagnosis and rebuild of the pipeline, identifying critical numerical issues such as unstable normalization (infinite variance in invariants) and feature collapse. The model was redesigned using physics-guided feature engineering, incorporating flow-separation indicators such as streamline curvature, strain–rotation balance, wall-distance scaling, periodic encoding, and non-dimensional force ratios governing adverse pressure gradients and turbulence dynamics.</p>
+
+<h4>Performance Results</h4>
+<div class="highlight">
+The final model achieves strong offline accuracy (<strong>R² ≈ 0.84</strong> for shear stress components) and is successfully integrated into OpenFOAM using a custom coupling loop, where the predicted anisotropy is projected back into the momentum equations. The coupled simulation reproduces the DNS velocity field with high fidelity (<strong>R² ≈ 0.95</strong> for streamwise velocity) across the entire domain.
+</div>
+
+<h4>Key Research Finding</h4>
+<p>A key research finding is the identification of a <strong>deployment gap</strong> between offline ML performance and coupled CFD simulations. While the model performs well on DNS-quality inputs, its accuracy degrades in practice due to inconsistencies in turbulence quantities (notably turbulent kinetic energy, <em>k</em>) predicted by the baseline RANS solver.</p>
+<div style="text-align:center;font-size:0.82rem;color:var(--text-muted);padding:16px;border:1px dashed var(--border-light);border-radius:8px;margin:12px 0;background:rgba(251,191,36,0.04);">
+⚠ <strong>Key Insight:</strong> model accuracy depends strongly on the consistency of input physics during deployment.
+</div>
+
+<h4>Limitations &amp; Future Work</h4>
+<p>The study reveals limitations of local invariant-based models in capturing non-equilibrium recirculation physics, motivating future work on <strong>history-aware features</strong> and fully coupled turbulence modelling strategies.</p>
+
+<h4>Key Highlights</h4>
+<ul>
+<li>Physics-informed ML closure using Tensor-Basis Neural Networks (TBNN)</li>
+<li>Advanced feature engineering based on flow physics (force ratios, curvature, invariants)</li>
+<li>Full OpenFOAM coupling (v11) with iterative solver integration</li>
+<li>Achieved R² ≈ 0.95 for velocity field on periodic hill benchmark</li>
+<li>Identified critical offline → coupled performance gap</li>
+<li>Insights into limitations of local turbulence models in separated flows</li>
+</ul>
+
+<h4>Tools &amp; Impact</h4>
+<p>OpenFOAM v11 · Python · PyTorch — bridging the gap between machine learning models and production CFD workflows, demonstrating both the potential and the limitations of AI-driven turbulence modelling.</p>
+                    `,
+                    tags: ["OpenFOAM", "ML", "Turbulence Modeling", "RANS", "DNS", "Tensor-Basis NN"]
+                },
+            {
+                title: "GNN-RL Adaptive Mesh Refinement",
+                description: `
+<h4>The Problem</h4>
+<p>Adaptive mesh refinement (AMR) decides where to put cells so error per DOF is minimized. Production AMR drivers use hand-tuned heuristics — gradient, curvature, residual indicators — that work well on familiar problems but cannot reason globally or anticipate where error will appear after the next solve.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;">
+<img src="https://lh3.googleusercontent.com/d/13LYnbLBtW7HmEyGS_9cOEFYRX-z1XYXw" alt="GNN-RL refined mesh" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);">
+<img src="https://lh3.googleusercontent.com/d/15dpL2V9k1d0KDjO8aAhPG1J1HpAYjYFN" alt="GNN-RL error vs DOF Pareto" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);">
+</div>
+
+<h4>The Approach</h4>
+<p>Each cell becomes a graph node carrying <em>(u, |∇u|, level, log h, x, y)</em>; a GNN actor–critic outputs a per-cell refine score. <strong>Top-K cells</strong> are sampled via Plackett–Luce + Gumbel and refined under 2:1 balance. Reward = per-step log-error reduction minus a soft DOF penalty. Training is <strong>imitation warmup</strong> on the gradient heuristic, followed by <strong>PPO finetune</strong> to push beyond it.</p>
+
+<h4>Phase-1 Results</h4>
+<div class="highlight">
+On 2D Poisson with two sharp Gaussian peaks (init L=3, 5 refine steps), the policy reaches err·√N = <strong>0.164</strong> vs the gradient heuristic's <strong>0.216</strong> — a <strong>24% improvement at the same DOF count</strong>. PPO discovered a non-trivial pattern that concentrates cells in the peak interiors and skips the periphery.
+</div>
+
+<h4>Generalisation &amp; Curriculum</h4>
+<ul>
+<li><strong>Held-out distribution test</strong> — on 20 unseen Gaussian cases, the policy beats gradient on <strong>17 / 20</strong>; on rotated/scaled shocks, generalisation is mixed (8/20) — likely needs rotational equivariance.</li>
+<li><strong>Curriculum on shock sharpness</strong> — ramping <em>a</em> from 8 → 50 over 80 PPO updates lets the policy beat every heuristic at the trained sharpness.</li>
+<li><strong>A-posteriori residual feature</strong> — adding |h²·∇²u| as an input lets the policy work without ground-truth, but also closes the gap to the heuristic — a useful negative result for AMR-RL research.</li>
+<li><strong>Coarsen + refine</strong> — two-headed actor recovers the lead on shocks (3.64 vs 3.86 residual baseline) by reclaiming over-refined cells.</li>
+</ul>
+
+<h4>OpenFOAM Bridge</h4>
+<p>End-to-end Python ↔ OpenFOAM v2412 pipeline: ASCII polyMesh + field reader, <code>topoSetDict</code> / <code>refineMeshDict</code> writer, lid-driven cavity validated. Laplacian-of-|U| heuristic correctly marks the lid singularity; full Phase-3 Navier–Stokes training inside a <code>dynamicRefineFvMesh</code> loop is the next step.</p>
+
+<h4>Tools &amp; Stack</h4>
+<p>PyTorch · PPO · custom quadtree (2:1-balanced) · cell-centred FV Poisson solver · OpenFOAM v2412 coupling.</p>
+                `,
+                tags: ["GNN", "Reinforcement Learning", "AMR", "PPO", "PyTorch", "OpenFOAM"],
+                githubLink: "https://github.com/AGN000/gnn-rl-amr"
+            },
+            {
+                title: "AeroFNO-LoRA: Low-Rank Spectral Operators",
+                description: `
+<h4>The Question</h4>
+<p>The spectral convolution layer of a Fourier Neural Operator stores a dense complex weight tensor <em>R ∈ ℂ<sup>C<sub>in</sub>×C<sub>out</sub>×M<sub>x</sub>×M<sub>y</sub></sup></em>. Most of FNO's parameters live in <em>R</em>. Can it be factorised — LoRA-style — without losing accuracy on real engineering data?</p>
+
+<div style="margin:14px 0;text-align:center;">
+<img src="https://lh3.googleusercontent.com/d/1rcwkkplbmNJmyqwn2N0J6lw-1n14iEr6" alt="AeroFNO-LoRA results" style="width:100%;max-width:520px;border-radius:var(--radius);border:1px solid var(--border);">
+</div>
+
+<h4>The Variants</h4>
+<ul>
+<li><strong>Per-mode LoRA</strong> — rank-r factorisation <em>A<sub>k</sub>·B<sub>k</sub></em> per Fourier mode</li>
+<li><strong>Mode-shared LoRA</strong> — single channel mixer + per-mode complex gate</li>
+<li><strong>Tucker</strong> — decomposition over (modes_x, modes_y, C_in, C_out)</li>
+<li><strong>Adapter LoRA</strong> — frozen pretrained R + trainable rank-r delta (B=0 init → exact identity at start)</li>
+<li><strong>Physics-prior LoRA</strong> — R = α(|k|²)·I + A·B with one learned scalar ν<sub>eff</sub> per layer</li>
+<li><strong>POD-init LoRA</strong> — initialise A,B from the truncated SVD of a converged dense R</li>
+</ul>
+
+<h4>Headline Numbers — AirfRANS</h4>
+<div class="highlight">
+<strong>POD-init r=8 BEATS the dense baseline</strong> at 4× fewer parameters (rel-L2 0.094 vs 0.110). At r=2, it matches dense at <strong>16× compression</strong>. Tucker (r=32, r<sub>m</sub>=64) gives <strong>20× total compression</strong> at 1.16× error. Physics-prior LoRA gives a free 5% improvement at low rank for one extra scalar per layer.
+</div>
+
+<h4>Strong-OOD Adapter LoRA</h4>
+<p>Source: dense FNO trained on |AoA| ≤ 3°. Target: |AoA| ≥ 7° (zero-shot rel-L2 = 0.62). LoRA r=8 adapter (25% trainable) recovers <strong>93% of full-fine-tune performance</strong> — a clean adaptation story when the source/target gap is real.</p>
+
+<h4>Differentiable Shape Optimisation</h4>
+<p>CST coefficients → polygon → SDF → frozen surrogate → forces → backprop. NACA-0012 at α=5°, U=50 m/s: <strong>80 Adam steps in 1.7 s</strong>, Cd reduced 13% with C<sub>L</sub> pinned at 0.4. C<sub>L</sub> prediction matches AirfRANS truth at Pearson r = 0.998.</p>
+
+<h4>Honest Negatives</h4>
+<ul>
+<li>Drag prediction is resolution-limited at 128² — wall-shear is sub-mm at Re ≈ 3·10⁶, the surrogate measures outer-layer gradients. Architectural ceiling, not training issue.</li>
+<li>Soft div-free penalty made things worse — AirfRANS truth itself is not div-free at 128². Hard Helmholtz–Hodge projection would be worse for the same reason.</li>
+<li>Mode-shared LoRA does not recover at higher rank — the structure is too rigid.</li>
+<li>Body no-slip penalty backfired — zero in physical space ≠ zero in normalised space.</li>
+</ul>
+
+<h4>Tools &amp; Stack</h4>
+<p>PyTorch · self-contained spectral conv module (no neuralop dependency) · AirfRANS public dataset · 8× H100 80GB.</p>
+                `,
+                tags: ["FNO", "LoRA", "AirfRANS", "Shape Optimization", "PyTorch", "Spectral Methods"],
+                githubLink: "https://github.com/AGN000/AeroFNO-LoRA"
+            },
+            {
+                title: "Multi-Agent Workbench",
+                description: `
+<h4>The Idea</h4>
+<p>One LLM critiquing another's draft beats a single LLM trying to self-critique. The Multi-Agent Workbench is a Worker + Critic feedback loop: the Worker drafts an answer, the Critic finds concrete flaws, the Worker revises. Repeat for N iterations. A web GUI lets you swap which local model plays each role, watch both agents' tokens stream live, and save transcripts.</p>
+
+<div style="margin:14px 0;text-align:center;">
+<img src="https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh" alt="Multi-Agent Workbench UI" style="width:100%;max-width:520px;border-radius:var(--radius);border:1px solid var(--border);">
+</div>
+
+<h4>How the Loop Works</h4>
+<p>Two vLLM servers run on different GPU slices (e.g. Qwen3-27B on GPUs 0–3 with TP=4, Gemma-26B on GPUs 4–5 with TP=2). The FastAPI backend orchestrates the dialogue:</p>
+<ul>
+<li><strong>Iteration 1</strong> — Worker drafts from the system prompt + user task</li>
+<li><strong>Iterations 2..N</strong> — Critic reads the draft and produces concrete flaw analysis; Worker revises using the critique</li>
+<li>Every token from both agents streams live to the browser via Server-Sent Events</li>
+</ul>
+
+<h4>What the GUI Does</h4>
+<ul>
+<li>Pick which local model plays Worker vs Critic from a dropdown of models in <code>/data/model_zoo/</code></li>
+<li>Start / stop vLLM servers with one click (PIDs persisted in <code>runs/</code>)</li>
+<li>Download new HuggingFace models through <code>huggingface_hub</code> directly from the UI</li>
+<li>Watch both agents' tokens stream in real time, side by side</li>
+<li>Set system prompt, task, number of iterations, save the full transcript as JSON</li>
+</ul>
+
+<h4>Why It's Useful</h4>
+<div class="highlight">
+A reproducible, fully offline harness for studying multi-agent LLM behaviour: which Worker / Critic pairings actually improve answer quality? Does adding a third "judge" agent change the ranking? Where does the loop saturate? All experiments stay on local hardware — no API calls, no rate limits, full control over decoding.
+</div>
+
+<h4>Tools &amp; Stack</h4>
+<p>FastAPI · vLLM (tensor-parallel) · HuggingFace Hub · Server-Sent Events · plain HTML/CSS/JS frontend · YAML-driven port/GPU/TP config.</p>
+                `,
+                tags: ["LLM", "Multi-Agent", "vLLM", "FastAPI", "SSE", "Web GUI"],
+                githubLink: "https://github.com/AGN000/multi-agent-workbench"
             }
-        ];
+            ];
 
         // Mobile menu
         const hamburger = document.getElementById('hamburger');
@@ -1157,7 +1384,7 @@
         const sections = document.querySelectorAll('section[id]');
         window.addEventListener('scroll', () => {
             let current = '';
-            sections.forEach(s => { if (scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
+            sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id'); });
             navLinks.querySelectorAll('a').forEach(l => {
                 l.classList.toggle('active', l.getAttribute('href') === '#' + current);
             });
@@ -1189,7 +1416,7 @@
                     const a = document.createElement('a');
                     a.href = p.demoLink; a.target = '_blank'; a.rel = 'noreferrer';
                     a.className = 'm-btn secondary';
-                    a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" m="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Demo Video';
+                    a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Demo Video';
                     modalActions.appendChild(a);
                 }
                 if (p.githubLink) {
