@@ -1025,9 +1025,7 @@
                         <div class="ptags"><span class="ptag">Neural Operator</span><span class="ptag">CFD Surrogate</span><span class="ptag">OpenFOAM</span><span class="ptag">PyTorch</span></div>
                         <h3>AI Surrogate for Electronic Chip Cooling Optimisation</h3>
                         <p>Deep learning surrogate trained on 1,386 OpenFOAM simulations to predict heat sink temperature and pressure fields in &lt;1 ms — over 10<sup>6</sup>&times; faster than CFD. Enables real-time design optimisation of microchannel and pin-fin heat sinks.</p>
-                        <div class="project-links">
-                            <span class="p-link link" style="color:var(--amber);">&#9733; Conference Paper</span>
-                        </div>
+                        <div class="project-links"></div>
                     </div>
                 </div>
 
@@ -1725,9 +1723,8 @@ The surrogate is <strong>over 10<sup>6</sup>× faster than CFD</strong> at infer
 <h4>Why Physics-Based Invariants Matter for Optimisation &amp; Control</h4>
 <p>Naively training a surrogate on raw simulation outputs and feeding it into an optimiser fails in practice — the optimiser finds inputs that exploit blind spots in the surrogate rather than true physical optima. We address this by baking physical invariants directly into the model:</p>
 <ul>
-<li><strong>Euler number normalisation</strong> — pressure drop is expressed as a dimensionless Eu = ΔP / (½ρU²), separating geometry/Re dependence from velocity scaling. Without this, a spurious Q–U correlation in training data drives the optimiser to minimum flow speed where the surrogate extrapolates inaccurately</li>
-<li><strong>Geometry-normalised Euler (GeoEu)</strong> — dividing by the frontal blockage ratio β² decouples pressure prediction from pin geometry, reducing target variance by 47% before any model change</li>
-<li><strong>Trust-region constraint</strong> — a soft ellipsoidal penalty keeps the optimiser within the training distribution, preventing low-Re extrapolation artefacts. This lifts Re from 191 to 278 and reduces pressure error from 63% to 26% in CFD validation — with zero changes to the model</li>
+<li><strong>Euler number normalisation</strong></li>
+<li><strong>Geometry-normalised Euler (GeoEu)</strong></li>
 </ul>
 <div class="highlight">
 These invariants are not post-processing tricks — they are structural choices that make the surrogate physically consistent, enabling an optimiser and controller to trust its predictions across the design space.
@@ -1735,10 +1732,6 @@ These invariants are not post-processing tricks — they are structural choices 
 
 <h4>Tools & Stack</h4>
 <p>OpenFOAM (chtMultiRegionSimpleFoam, RANS k-ω SST) · PyTorch · Python · H100 GPUs · 1,386-snapshot CFD dataset.</p>
-
-<div style="margin-top:20px;padding:14px 18px;background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.2);border-radius:10px;font-size:0.84rem;color:#fbbf24;font-weight:500;">
-&#9733; Conference paper — to be published soon
-</div>
                 `,
                 tags: ["Neural Operator", "CFD Surrogate", "Chip Cooling", "OpenFOAM", "PyTorch", "Design Optimisation"]
             }
