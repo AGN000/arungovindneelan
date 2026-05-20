@@ -473,6 +473,8 @@
         .pg9 { background: linear-gradient(135deg, #0d1b2a, #1a3052); }
         .pg10 { background: linear-gradient(135deg, #1a0f2e, #0d1b3a); }
         .pg11 { background: linear-gradient(135deg, #0a1f1c, #142d2e); }
+        .pg12 { background: linear-gradient(135deg, #1a0a0a, #2d1010); }
+        .pg13 { background: linear-gradient(135deg, #0a1220, #1a2a10); }
         .pg-placeholder {
             width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
         }
@@ -988,6 +990,47 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- RCS + Aero Co-optimization -->
+                <div class="project-card reveal" data-project="13">
+                    <div class="project-image pg13" style="position:relative;cursor:pointer;" onclick="window.open('https://www.youtube.com/watch?v=-MdwCqULTyE','_blank')">
+                        <img src="https://img.youtube.com/vi/-MdwCqULTyE/maxresdefault.jpg" alt="RCS Aero Co-optimization Demo" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+                            <div style="width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,0.7);border:3px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"></polygon></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">RCS</span><span class="ptag">Aerodynamics</span><span class="ptag">Co-optimization</span><span class="ptag">CFD</span></div>
+                        <h3>RCS &amp; Aerodynamics Co-optimization</h3>
+                        <p>Simultaneous optimisation of Reaction Control System (RCS) thruster placement and aerodynamic surface geometry to maximise control authority while minimising drag. Coupled CFD + adjoint-based design loop.</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=-MdwCqULTyE" target="_blank" rel="noreferrer" class="p-link demo" onclick="event.stopPropagation()">&#9654; Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Species Reacting Flow / Detonation -->
+                <div class="project-card reveal" data-project="12">
+                    <div class="project-image pg12" style="position:relative;cursor:pointer;" onclick="window.open('https://www.youtube.com/watch?v=0UWJrLiAp88','_blank')">
+                        <img src="https://img.youtube.com/vi/0UWJrLiAp88/maxresdefault.jpg" alt="Detonation Simulation Demo" style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);transition:background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.25)'" onmouseout="this.style.background='rgba(0,0,0,0.35)'">
+                            <div style="width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,0.7);border:3px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"></polygon></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <div class="ptags"><span class="ptag">OpenFOAM</span><span class="ptag">Detonation</span><span class="ptag">Reacting Flow</span><span class="ptag">Multi-Species</span></div>
+                        <h3>Multi-Species Reacting Flow &amp; Detonation</h3>
+                        <p>High-fidelity detonation simulations in OpenFOAM with detailed multi-species chemical kinetics. Captures detonation wave structure, species transport, and heat release in compressible reacting flows.</p>
+                        <div class="project-links">
+                            <a href="https://www.youtube.com/watch?v=0UWJrLiAp88" target="_blank" rel="noreferrer" class="p-link demo" onclick="event.stopPropagation()">&#9654; Demo 1</a>
+                            <a href="https://www.youtube.com/watch?v=JM1tGOeRA2s" target="_blank" rel="noreferrer" class="p-link demo" onclick="event.stopPropagation()">&#9654; Demo 2</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1325,7 +1368,9 @@
             "https://lh3.googleusercontent.com/d/1QBVVsJTrLR35CqqgIC-h32yoM_E8p5n1",
             "https://lh3.googleusercontent.com/d/13LYnbLBtW7HmEyGS_9cOEFYRX-z1XYXw",
             "https://lh3.googleusercontent.com/d/1rcwkkplbmNJmyqwn2N0J6lw-1n14iEr6",
-            "https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh"
+            "https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh",
+            "https://img.youtube.com/vi/0UWJrLiAp88/maxresdefault.jpg",
+            "https://img.youtube.com/vi/-MdwCqULTyE/maxresdefault.jpg"
         ];
 
         const projectsData = [
@@ -1536,6 +1581,61 @@ A reproducible, fully offline harness for studying multi-agent LLM behaviour: wh
                 `,
                 tags: ["LLM", "Multi-Agent", "vLLM", "FastAPI", "SSE", "Web GUI"],
                 githubLink: "https://github.com/AGN000/multi-agent-workbench"
+            },
+            {
+                title: "Multi-Species Reacting Flow & Detonation",
+                description: `
+<h4>Overview</h4>
+<p>High-fidelity detonation simulations in OpenFOAM using detailed multi-species chemical kinetics. The solver couples compressible Navier–Stokes with a full reaction mechanism to capture the intricate physics of detonation wave propagation, species transport, and heat release.</p>
+
+<h4>Capabilities</h4>
+<ul>
+<li><strong>Multi-species transport</strong> — full species continuity equations with mixture-averaged diffusion</li>
+<li><strong>Detailed chemistry</strong> — stiff ODE integration of finite-rate reaction mechanisms (H₂, hydrocarbon fuels)</li>
+<li><strong>Detonation wave structure</strong> — resolves the leading shock, induction zone, and reaction front with high-order schemes</li>
+<li><strong>Compressible reacting flow</strong> — density-based solver handling high-Mach conditions and strong shocks</li>
+<li><strong>OpenFOAM framework</strong> — fully customisable solver built on OpenFOAM, extensible to complex geometries and boundary conditions</li>
+</ul>
+
+<h4>Applications</h4>
+<div class="highlight">
+Rotating Detonation Engines (RDE), pulse detonation propulsion, scramjet ignition and flame holding, safety analysis of hydrogen/hydrocarbon mixtures in confined geometries.
+</div>
+
+<h4>Tools & Stack</h4>
+<p>OpenFOAM · custom reactingFoam-based solver · Cantera (mechanism validation) · ParaView (post-processing) · Python (analysis scripts).</p>
+                `,
+                tags: ["OpenFOAM", "Detonation", "Reacting Flow", "Multi-Species", "Chemical Kinetics", "CFD"],
+                demoLink: "https://www.youtube.com/watch?v=0UWJrLiAp88",
+                demo2Link: "https://www.youtube.com/watch?v=JM1tGOeRA2s"
+            },
+            {
+                title: "RCS & Aerodynamics Co-optimization",
+                description: `
+<h4>Overview</h4>
+<p>Simultaneous optimisation of Reaction Control System (RCS) thruster placement and aerodynamic surface geometry. Rather than treating RCS and aero design as sequential problems, this work couples them into a single adjoint-driven design loop — finding configurations that maximise control authority while keeping aerodynamic drag minimal.</p>
+
+<h4>Why Co-optimization Matters</h4>
+<div class="highlight">
+Optimising RCS and aerodynamics independently leads to sub-optimal designs: an aerodynamically clean shape may leave thruster plumes in unfavourable interactions with the flow, increasing effective drag and reducing control efficiency. Co-optimisation finds the true Pareto front between the two objectives.
+</div>
+
+<h4>Methodology</h4>
+<ul>
+<li><strong>Coupled CFD</strong> — full Navier–Stokes simulation of the vehicle with active RCS plumes modelled as momentum/mass sources</li>
+<li><strong>Adjoint sensitivity</strong> — continuous adjoint formulation provides shape sensitivities for both aero drag and RCS control moment simultaneously</li>
+<li><strong>Multi-objective optimisation</strong> — Pareto-front exploration trading off drag coefficient against control effectiveness</li>
+<li><strong>Parametric geometry</strong> — surface shape parameterised via CST / FFD so gradients map directly to designable variables</li>
+</ul>
+
+<h4>Applications</h4>
+<p>Re-entry vehicles, hypersonic glide vehicles, spacecraft manoeuvring systems, and any configuration where aerodynamic surfaces and attitude-control thrusters share the same flow environment.</p>
+
+<h4>Tools & Stack</h4>
+<p>OpenFOAM · SU2 (adjoint) · Python (optimisation loop) · ParaView · ANSYS ICEM CFD (meshing).</p>
+                `,
+                tags: ["RCS", "Aerodynamics", "Co-optimization", "Adjoint", "CFD", "Multi-objective"],
+                demoLink: "https://www.youtube.com/watch?v=-MdwCqULTyE"
             }
             ];
 
@@ -1586,6 +1686,13 @@ A reproducible, fully offline harness for studying multi-agent LLM behaviour: wh
                     a.href = p.demoLink; a.target = '_blank'; a.rel = 'noreferrer';
                     a.className = 'm-btn secondary';
                     a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Demo Video';
+                    modalActions.appendChild(a);
+                }
+                if (p.demo2Link) {
+                    const a = document.createElement('a');
+                    a.href = p.demo2Link; a.target = '_blank'; a.rel = 'noreferrer';
+                    a.className = 'm-btn secondary';
+                    a.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Demo Video 2';
                     modalActions.appendChild(a);
                 }
                 if (p.githubLink) {
