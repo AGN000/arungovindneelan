@@ -994,8 +994,9 @@
 
                 <!-- RCS + Aero Co-optimization -->
                 <div class="project-card reveal" data-project="13">
-                    <div class="project-image pg13" style="position:relative;cursor:pointer;" onclick="window.open('https://www.youtube.com/watch?v=-MdwCqULTyE','_blank')">
-                        <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0a1220,#1a2a10);">
+                    <div class="project-image" style="position:relative;cursor:pointer;overflow:hidden;" onclick="window.open('https://www.youtube.com/watch?v=-MdwCqULTyE','_blank')">
+                        <img src="https://img.youtube.com/vi/-MdwCqULTyE/hqdefault.jpg" alt="RCS Co-optimization" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#0a1220,#1a2a10);position:absolute;inset:0;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
                             <span style="font-size:0.7rem;color:#818cf8;text-transform:uppercase;letter-spacing:2px;font-weight:600;">FDTD + CFD</span>
                         </div>
@@ -1032,8 +1033,9 @@
 
                 <!-- Multi-Species Reacting Flow / Detonation -->
                 <div class="project-card reveal" data-project="12">
-                    <div class="project-image pg12" style="position:relative;cursor:pointer;" onclick="window.open('https://www.youtube.com/watch?v=0UWJrLiAp88','_blank')">
-                        <div style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a0a0a,#2d1010);">
+                    <div class="project-image" style="position:relative;cursor:pointer;overflow:hidden;" onclick="window.open('https://www.youtube.com/watch?v=0UWJrLiAp88','_blank')">
+                        <img src="https://img.youtube.com/vi/0UWJrLiAp88/hqdefault.jpg" alt="Detonation OpenFOAM" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div style="display:none;width:100%;height:100%;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,#1a0a0a,#2d1010);position:absolute;inset:0;">
                             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fb7185" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/><path d="M8 12h.01M16 12h.01"/></svg>
                             <span style="font-size:0.7rem;color:#fb7185;text-transform:uppercase;letter-spacing:2px;font-weight:600;">Detonation · OpenFOAM</span>
                         </div>
@@ -1082,9 +1084,25 @@
 
             <div class="pub-section reveal">
                 <h3>&#128161; Patents</h3>
-                <div class="patents-card">
-                    <p style="font-size:0.92rem;line-height:1.7;color:var(--text-secondary);">Neelan, A.A.G., Vinoth P. and Srinivasan B. &ldquo;Tandem Spiked Combustor of Scram-jet Engine for Shock-Induced Mixing&rdquo; (Applied) &mdash; <a href="https://drive.google.com/file/d/1EfLcrgRsI2tgZ37tgpVLGs89Ypw235IR/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent-primary);text-decoration:none;">View Patent &#8599;</a></p>
-                </div>
+                <a href="https://drive.google.com/file/d/1EfLcrgRsI2tgZ37tgpVLGs89Ypw235IR/view?usp=drive_link" target="_blank" rel="noopener" style="text-decoration:none;display:block;max-width:420px;">
+                    <div style="border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--bg-card);transition:border-color 0.2s,transform 0.2s;" onmouseover="this.style.borderColor='var(--accent-primary)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='translateY(0)'">
+                        <div style="height:200px;overflow:hidden;background:#0f172a;">
+                            <img src="https://drive.google.com/thumbnail?id=1EfLcrgRsI2tgZ37tgpVLGs89Ypw235IR&sz=w600" alt="Patent document preview" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                            <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:linear-gradient(135deg,#0f172a,#1e1b4b);">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                                <span style="font-size:0.7rem;color:#818cf8;text-transform:uppercase;letter-spacing:2px;">Patent Document</span>
+                            </div>
+                        </div>
+                        <div style="padding:18px 20px;">
+                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:20px;background:rgba(99,102,241,0.15);color:#818cf8;border:1px solid rgba(99,102,241,0.3);">Patent (Applied)</span>
+                            </div>
+                            <div style="font-size:1rem;font-weight:700;color:var(--text-primary);margin-bottom:8px;line-height:1.4;">COMBUSTOR FOR PROPULSION SYSTEM</div>
+                            <div style="font-size:0.82rem;color:var(--text-muted);margin-bottom:12px;">Neelan, A.A.G., Vinoth P. &amp; Srinivasan B.</div>
+                            <div style="font-size:0.82rem;color:var(--accent-primary);font-weight:600;">View Patent &#8599;</div>
+                        </div>
+                    </div>
+                </a>
             </div>
 
             <div class="pub-section reveal">
