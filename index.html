@@ -1017,52 +1017,12 @@
 
                 <!-- SPARK-TFNO Chip Cooling -->
                 <div class="project-card reveal" data-project="14">
-                    <div class="project-image pg14" style="position:relative;">
-                        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:16px;">
-                            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-height:160px;">
-                                <!-- Microchannel heat sink 3D sketch -->
-                                <defs>
-                                    <linearGradient id="hsg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.4"/></linearGradient>
-                                    <linearGradient id="hsg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#818cf8;stop-opacity:0.6"/><stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.2"/></linearGradient>
-                                    <linearGradient id="thermal" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" style="stop-color:#fb7185;stop-opacity:0.9"/><stop offset="50%" style="stop-color:#fbbf24;stop-opacity:0.7"/><stop offset="100%" style="stop-color:#34d399;stop-opacity:0.6"/></linearGradient>
-                                </defs>
-                                <!-- Base plate -->
-                                <polygon points="20,130 160,100 300,130 160,160" fill="url(#hsg1)" stroke="#3b82f6" stroke-width="1"/>
-                                <!-- Channel fins left block -->
-                                <polygon points="20,130 160,100 160,55 20,85" fill="url(#hsg2)" stroke="#818cf8" stroke-width="0.8"/>
-                                <!-- Channel fins right block -->
-                                <polygon points="160,100 300,130 300,85 160,55" fill="url(#hsg1)" stroke="#3b82f6" stroke-width="0.8" opacity="0.7"/>
-                                <!-- Fin lines on top face -->
-                                <line x1="60" y1="80" x2="120" y2="65" stroke="#60a5fa" stroke-width="0.7" opacity="0.7"/>
-                                <line x1="80" y1="77" x2="140" y2="62" stroke="#60a5fa" stroke-width="0.7" opacity="0.7"/>
-                                <line x1="100" y1="74" x2="160" y2="59" stroke="#60a5fa" stroke-width="0.7" opacity="0.6"/>
-                                <line x1="120" y1="71" x2="180" y2="60" stroke="#60a5fa" stroke-width="0.6" opacity="0.5"/>
-                                <!-- Temperature gradient bar -->
-                                <rect x="278" y="40" width="12" height="110" rx="3" fill="url(#thermal)" stroke="#2a3650" stroke-width="0.5"/>
-                                <text x="296" y="46" fill="#fb7185" font-size="8" font-family="monospace">Hot</text>
-                                <text x="296" y="155" fill="#34d399" font-size="8" font-family="monospace">Cool</text>
-                                <!-- Pin-fin array (right side small) -->
-                                <g opacity="0.75">
-                                    <rect x="185" y="85" width="5" height="18" rx="1" fill="#818cf8"/>
-                                    <rect x="197" y="83" width="5" height="20" rx="1" fill="#818cf8"/>
-                                    <rect x="209" y="85" width="5" height="18" rx="1" fill="#818cf8"/>
-                                    <rect x="221" y="83" width="5" height="20" rx="1" fill="#818cf8"/>
-                                    <rect x="233" y="85" width="5" height="18" rx="1" fill="#818cf8"/>
-                                    <rect x="191" y="96" width="5" height="18" rx="1" fill="#6366f1" opacity="0.8"/>
-                                    <rect x="203" y="94" width="5" height="20" rx="1" fill="#6366f1" opacity="0.8"/>
-                                    <rect x="215" y="96" width="5" height="18" rx="1" fill="#6366f1" opacity="0.8"/>
-                                    <rect x="227" y="94" width="5" height="20" rx="1" fill="#6366f1" opacity="0.8"/>
-                                </g>
-                                <!-- Labels -->
-                                <text x="55" y="152" fill="#8896ad" font-size="9" font-family="sans-serif">Microchannel</text>
-                                <text x="186" y="120" fill="#8896ad" font-size="9" font-family="sans-serif">Pin-fin</text>
-                                <text x="90" y="30" fill="#60a5fa" font-size="10" font-weight="bold" font-family="sans-serif">OpenFOAM CFD → Neural Operator Surrogate</text>
-                            </svg>
-                        </div>
+                    <div class="project-image" style="position:relative;">
+                        <img src="https://lh3.googleusercontent.com/d/1sGN_aHGwd0Z8FwtHmBwD0m-bozdW7H2p" alt="AI Surrogate for Chip Cooling Optimisation" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="project-body">
                         <div class="ptags"><span class="ptag">Neural Operator</span><span class="ptag">CFD Surrogate</span><span class="ptag">OpenFOAM</span><span class="ptag">PyTorch</span></div>
-                        <h3>AI Surrogate for Electronic Chip Cooling</h3>
+                        <h3>AI Surrogate for Electronic Chip Cooling Optimisation</h3>
                         <p>Deep learning surrogate trained on 1,386 OpenFOAM simulations to predict heat sink temperature and pressure fields in &lt;1 ms — over 10<sup>6</sup>&times; faster than CFD. Enables real-time design optimisation of microchannel and pin-fin heat sinks.</p>
                         <div class="project-links">
                             <span class="p-link link" style="color:var(--amber);">&#9733; Conference Paper</span>
@@ -1117,7 +1077,14 @@
         <div class="container">
             <div class="section-header reveal">
                 <div class="label">Research Output</div>
-                <h2>Publications</h2>
+                <h2>Patents &amp; Publications</h2>
+            </div>
+
+            <div class="pub-section reveal">
+                <h3>&#128161; Patents</h3>
+                <div class="patents-card">
+                    <p style="font-size:0.92rem;line-height:1.7;color:var(--text-secondary);">Neelan, A.A.G., Vinoth P. and Srinivasan B. &ldquo;Tandem Spiked Combustor of Scram-jet Engine for Shock-Induced Mixing&rdquo; (Applied) &mdash; <a href="https://drive.google.com/file/d/1EfLcrgRsI2tgZ37tgpVLGs89Ypw235IR/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent-primary);text-decoration:none;">View Patent &#8599;</a></p>
+                </div>
             </div>
 
             <div class="pub-section reveal">
@@ -1242,12 +1209,6 @@
                 </div>
             </div>
 
-            <div class="pub-section reveal">
-                <h3>&#128161; Patents</h3>
-                <div class="patents-card">
-                    <p style="font-size:0.92rem;line-height:1.7;color:var(--text-secondary);">Neelan, A.A.G., Vinoth P. and Srinivasan B. &ldquo;Tandem Spiked Combustor of Scram-jet Engine for Shock-Induced Mixing&rdquo; (Applied)</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1433,7 +1394,7 @@
             "https://lh3.googleusercontent.com/d/1eM0mmyhWzO59vzmfT-5xnkl_BGrc3Fyh",
             "https://img.youtube.com/vi/0UWJrLiAp88/hqdefault.jpg",
             "https://img.youtube.com/vi/-MdwCqULTyE/hqdefault.jpg",
-            ""
+            "https://lh3.googleusercontent.com/d/1sGN_aHGwd0Z8FwtHmBwD0m-bozdW7H2p"
         ];
 
         const projectsData = [
@@ -1673,7 +1634,40 @@ Rotating Detonation Engines (RDE), pulse detonation propulsion, scramjet ignitio
                 demo2Link: "https://www.youtube.com/watch?v=JM1tGOeRA2s"
             },
             {
-                title: "AI Surrogate for Electronic Chip Cooling",
+                title: "Stealth & Aerodynamic Co-optimization (RCS Reduction)",
+                description: `
+<h4>Overview</h4>
+<p>Simultaneous minimisation of Radar Cross Section (RCS) and aerodynamic drag for stealth aircraft and missile geometries. Rather than treating low-observability and aerodynamic efficiency as competing sequential design problems, this work couples electromagnetic scattering analysis with adjoint-based CFD into a single unified optimisation loop.</p>
+
+<h4>Why Co-optimization Matters</h4>
+<div class="highlight">
+A shape optimised purely for low RCS (flat panels, edge alignment) typically produces sharp leading edges and faceted surfaces that increase drag and reduce lift. A shape optimised purely for aerodynamics exposes curved surfaces that act as strong radar reflectors. True co-optimisation finds the Pareto front — configurations that are simultaneously low-observable <em>and</em> aerodynamically viable.
+</div>
+
+<h4>Methodology</h4>
+<ul>
+<li><strong>FDTD electromagnetic simulation</strong> — Finite-Difference Time-Domain solver computes monostatic and bistatic RCS across a broadband frequency sweep in a single time-domain run</li>
+<li><strong>High-fidelity CFD</strong> — RANS-based drag and lift evaluation over the same parametric geometry</li>
+<li><strong>Adjoint sensitivities</strong> — gradient of both RCS and aerodynamic objectives with respect to surface shape, enabling efficient gradient-based search</li>
+<li><strong>Multi-objective optimisation</strong> — NSGA-II / surrogate-assisted Pareto-front exploration trading RCS against C<sub>D</sub> and L/D</li>
+<li><strong>Parametric geometry</strong> — surface shape controlled via CST coefficients or FFD box, mapping gradients directly to manufacturable design variables</li>
+</ul>
+
+<h4>Key Results</h4>
+<ul>
+<li>Significant RCS reduction across frontal aspect angles while preserving subsonic and transonic aerodynamic performance</li>
+<li>Identified facet-angle and edge-sweep combinations that minimise specular returns without incurring drag penalties</li>
+<li>Design framework applicable to fighter aircraft, UAVs, cruise missiles, and hypersonic glide vehicles</li>
+</ul>
+
+<h4>Tools & Stack</h4>
+<p>FDTD EM solver · OpenFOAM · SU2 (adjoint CFD) · Python (NSGA-II loop, surrogate) · ParaView · ANSYS ICEM CFD.</p>
+                `,
+                tags: ["Stealth", "FDTD", "Radar Cross Section", "Aerodynamics", "Co-optimization", "Adjoint"],
+                demoLink: "https://www.youtube.com/watch?v=-MdwCqULTyE"
+            },
+            {
+                title: "AI Surrogate for Electronic Chip Cooling Optimisation",
                 description: `
 <h4>The Problem</h4>
 <p>Electronic components — processors, power modules, EV inverters — generate intense localised heat. Engineers design heat sinks (microchannel and pin-fin arrays) to keep chip temperatures within safe limits. The challenge: finding the optimal heat sink geometry requires evaluating thousands of design candidates, and each full CFD simulation takes 10–15 minutes. Design loops that should take hours take months.</p>
@@ -1729,39 +1723,6 @@ These invariants are not post-processing tricks — they are structural choices 
 </div>
                 `,
                 tags: ["Neural Operator", "CFD Surrogate", "Chip Cooling", "OpenFOAM", "PyTorch", "Design Optimisation"]
-            },
-            {
-                title: "Stealth & Aerodynamic Co-optimization (RCS Reduction)",
-                description: `
-<h4>Overview</h4>
-<p>Simultaneous minimisation of Radar Cross Section (RCS) and aerodynamic drag for stealth aircraft and missile geometries. Rather than treating low-observability and aerodynamic efficiency as competing sequential design problems, this work couples electromagnetic scattering analysis with adjoint-based CFD into a single unified optimisation loop.</p>
-
-<h4>Why Co-optimization Matters</h4>
-<div class="highlight">
-A shape optimised purely for low RCS (flat panels, edge alignment) typically produces sharp leading edges and faceted surfaces that increase drag and reduce lift. A shape optimised purely for aerodynamics exposes curved surfaces that act as strong radar reflectors. True co-optimisation finds the Pareto front — configurations that are simultaneously low-observable <em>and</em> aerodynamically viable.
-</div>
-
-<h4>Methodology</h4>
-<ul>
-<li><strong>FDTD electromagnetic simulation</strong> — Finite-Difference Time-Domain solver computes monostatic and bistatic RCS across a broadband frequency sweep in a single time-domain run</li>
-<li><strong>High-fidelity CFD</strong> — RANS-based drag and lift evaluation over the same parametric geometry</li>
-<li><strong>Adjoint sensitivities</strong> — gradient of both RCS and aerodynamic objectives with respect to surface shape, enabling efficient gradient-based search</li>
-<li><strong>Multi-objective optimisation</strong> — NSGA-II / surrogate-assisted Pareto-front exploration trading RCS against C<sub>D</sub> and L/D</li>
-<li><strong>Parametric geometry</strong> — surface shape controlled via CST coefficients or FFD box, mapping gradients directly to manufacturable design variables</li>
-</ul>
-
-<h4>Key Results</h4>
-<ul>
-<li>Significant RCS reduction across frontal aspect angles while preserving subsonic and transonic aerodynamic performance</li>
-<li>Identified facet-angle and edge-sweep combinations that minimise specular returns without incurring drag penalties</li>
-<li>Design framework applicable to fighter aircraft, UAVs, cruise missiles, and hypersonic glide vehicles</li>
-</ul>
-
-<h4>Tools & Stack</h4>
-<p>FDTD EM solver · OpenFOAM · SU2 (adjoint CFD) · Python (NSGA-II loop, surrogate) · ParaView · ANSYS ICEM CFD.</p>
-                `,
-                tags: ["Stealth", "FDTD", "Radar Cross Section", "Aerodynamics", "Co-optimization", "Adjoint"],
-                demoLink: "https://www.youtube.com/watch?v=-MdwCqULTyE"
             }
             ];
 
