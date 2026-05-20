@@ -1002,9 +1002,9 @@
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="ptags"><span class="ptag">RCS</span><span class="ptag">Aerodynamics</span><span class="ptag">Co-optimization</span><span class="ptag">CFD</span></div>
-                        <h3>RCS &amp; Aerodynamics Co-optimization</h3>
-                        <p>Simultaneous optimisation of Reaction Control System (RCS) thruster placement and aerodynamic surface geometry to maximise control authority while minimising drag. Coupled CFD + adjoint-based design loop.</p>
+                        <div class="ptags"><span class="ptag">Stealth</span><span class="ptag">Radar Cross Section</span><span class="ptag">Aerodynamics</span><span class="ptag">Co-optimization</span></div>
+                        <h3>Stealth &amp; Aerodynamic Co-optimization (RCS Reduction)</h3>
+                        <p>Simultaneous minimisation of radar cross section (RCS) and aerodynamic drag for stealth aircraft geometries. Couples electromagnetic scattering analysis with adjoint CFD to find shapes that are both low-observable and aerodynamically efficient.</p>
                         <div class="project-links">
                             <a href="https://www.youtube.com/watch?v=-MdwCqULTyE" target="_blank" rel="noreferrer" class="p-link demo" onclick="event.stopPropagation()">&#9654; Demo</a>
                         </div>
@@ -1610,31 +1610,36 @@ Rotating Detonation Engines (RDE), pulse detonation propulsion, scramjet ignitio
                 demo2Link: "https://www.youtube.com/watch?v=JM1tGOeRA2s"
             },
             {
-                title: "RCS & Aerodynamics Co-optimization",
+                title: "Stealth & Aerodynamic Co-optimization (RCS Reduction)",
                 description: `
 <h4>Overview</h4>
-<p>Simultaneous optimisation of Reaction Control System (RCS) thruster placement and aerodynamic surface geometry. Rather than treating RCS and aero design as sequential problems, this work couples them into a single adjoint-driven design loop — finding configurations that maximise control authority while keeping aerodynamic drag minimal.</p>
+<p>Simultaneous minimisation of Radar Cross Section (RCS) and aerodynamic drag for stealth aircraft and missile geometries. Rather than treating low-observability and aerodynamic efficiency as competing sequential design problems, this work couples electromagnetic scattering analysis with adjoint-based CFD into a single unified optimisation loop.</p>
 
 <h4>Why Co-optimization Matters</h4>
 <div class="highlight">
-Optimising RCS and aerodynamics independently leads to sub-optimal designs: an aerodynamically clean shape may leave thruster plumes in unfavourable interactions with the flow, increasing effective drag and reducing control efficiency. Co-optimisation finds the true Pareto front between the two objectives.
+A shape optimised purely for low RCS (flat panels, edge alignment) typically produces sharp leading edges and faceted surfaces that increase drag and reduce lift. A shape optimised purely for aerodynamics exposes curved surfaces that act as strong radar reflectors. True co-optimisation finds the Pareto front — configurations that are simultaneously low-observable <em>and</em> aerodynamically viable.
 </div>
 
 <h4>Methodology</h4>
 <ul>
-<li><strong>Coupled CFD</strong> — full Navier–Stokes simulation of the vehicle with active RCS plumes modelled as momentum/mass sources</li>
-<li><strong>Adjoint sensitivity</strong> — continuous adjoint formulation provides shape sensitivities for both aero drag and RCS control moment simultaneously</li>
-<li><strong>Multi-objective optimisation</strong> — Pareto-front exploration trading off drag coefficient against control effectiveness</li>
-<li><strong>Parametric geometry</strong> — surface shape parameterised via CST / FFD so gradients map directly to designable variables</li>
+<li><strong>RCS computation</strong> — physical optics / method-of-moments (MoM) solver for monostatic and bistatic radar signatures across frequency bands</li>
+<li><strong>High-fidelity CFD</strong> — RANS-based drag and lift evaluation over the same parametric geometry</li>
+<li><strong>Adjoint sensitivities</strong> — gradient of both RCS and aerodynamic objectives with respect to surface shape, enabling efficient gradient-based search</li>
+<li><strong>Multi-objective optimisation</strong> — NSGA-II / surrogate-assisted Pareto-front exploration trading RCS against C<sub>D</sub> and L/D</li>
+<li><strong>Parametric geometry</strong> — surface shape controlled via CST coefficients or FFD box, mapping gradients directly to manufacturable design variables</li>
 </ul>
 
-<h4>Applications</h4>
-<p>Re-entry vehicles, hypersonic glide vehicles, spacecraft manoeuvring systems, and any configuration where aerodynamic surfaces and attitude-control thrusters share the same flow environment.</p>
+<h4>Key Results</h4>
+<ul>
+<li>Significant RCS reduction across frontal aspect angles while preserving subsonic and transonic aerodynamic performance</li>
+<li>Identified facet-angle and edge-sweep combinations that minimise specular returns without incurring drag penalties</li>
+<li>Design framework applicable to fighter aircraft, UAVs, cruise missiles, and hypersonic glide vehicles</li>
+</ul>
 
 <h4>Tools & Stack</h4>
-<p>OpenFOAM · SU2 (adjoint) · Python (optimisation loop) · ParaView · ANSYS ICEM CFD (meshing).</p>
+<p>OpenFOAM · SU2 (adjoint CFD) · custom EM solver (physical optics) · Python (NSGA-II loop, surrogate) · ParaView · ANSYS ICEM CFD.</p>
                 `,
-                tags: ["RCS", "Aerodynamics", "Co-optimization", "Adjoint", "CFD", "Multi-objective"],
+                tags: ["Stealth", "Radar Cross Section", "Aerodynamics", "Co-optimization", "Adjoint", "Multi-objective"],
                 demoLink: "https://www.youtube.com/watch?v=-MdwCqULTyE"
             }
             ];
