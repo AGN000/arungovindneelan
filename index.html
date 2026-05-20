@@ -1617,9 +1617,11 @@ A reproducible, fully offline harness for studying multi-agent LLM behaviour: wh
                 btn.disabled = true;
                 btn.textContent = 'Sending…';
                 try {
+                    const formData = new FormData(inquiryForm);
                     const res = await fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
-                        body: new FormData(inquiryForm)
+                        headers: { 'Accept': 'application/json' },
+                        body: formData
                     });
                     const data = await res.json();
                     if (data.success) {
@@ -1630,14 +1632,14 @@ A reproducible, fully offline harness for studying multi-agent LLM behaviour: wh
                         result.textContent = "Thanks! I'll reply within 24 hours.";
                         inquiryForm.reset();
                     } else {
-                        throw new Error(data.message);
+                        throw new Error(data.message || JSON.stringify(data));
                     }
                 } catch (err) {
                     result.style.display = 'block';
                     result.style.background = 'rgba(251,113,133,0.08)';
                     result.style.border = '1px solid rgba(251,113,133,0.25)';
                     result.style.color = '#fb7185';
-                    result.textContent = 'Something went wrong — please email me directly.';
+                    result.textContent = 'Error: ' + err.message;
                 } finally {
                     btn.disabled = false;
                     btn.textContent = 'Send Inquiry →';
