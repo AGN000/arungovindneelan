@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arun Govind Neelan A | Research Scientist, CFD & AI/ML</title>
-    <meta name="description" content="Research Scientist specializing in Computational Fluid Dynamics, AI/ML, PINNs, and scientific computing. Ph.D. from IIST.">
+    <title>Arun Govind Neelan A | CFD & AI/ML Consulting</title>
+    <meta name="description" content="Independent consultant in Computational Fluid Dynamics, Physics-Informed AI, and Scientific Computing. Ph.D. (IIST), post-docs at CERFACS & IIT Madras. Available for project-based and retainer engagements.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -386,7 +386,6 @@
         }
 
         /* CONTACT */
-        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .contact-info h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
         .contact-info > p { color: var(--text-secondary); margin-bottom: 28px; }
         .contact-items { display: flex; flex-direction: column; gap: 6px; }
@@ -481,6 +480,75 @@
         .pg-placeholder img { width: 100%; height: 100%; object-fit: cover; }
         .pg-svg { width: 100%; height: 100%; padding: 18px; display: flex; align-items: center; justify-content: center; }
         .pg-svg svg { width: 100%; height: 100%; max-width: 320px; }
+
+        /* SERVICES BADGE */
+        .avail-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.25);
+            color: var(--emerald); border-radius: 50px; padding: 6px 16px;
+            font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .avail-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+
+        /* HOW I WORK */
+        #engage { background: var(--bg-secondary); }
+        .engage-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+        .engage-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 32px 28px;
+            transition: all 0.3s ease;
+        }
+        .engage-card:hover {
+            border-color: rgba(59,130,246,0.25); transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+        }
+        .engage-num {
+            font-size: 2rem; font-weight: 900; letter-spacing: -1px;
+            background: var(--gradient-blue);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            margin-bottom: 12px; display: block;
+        }
+        .engage-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+        .engage-card p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; }
+
+        /* CONTACT FORM */
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-form-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius-lg); padding: 36px;
+        }
+        .contact-form-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 6px; }
+        .contact-form-card > p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 24px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label { display: block; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 7px; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 11px 14px; color: var(--text-primary);
+            font-family: inherit; font-size: 0.9rem; transition: border-color 0.2s;
+            outline: none; appearance: none; -webkit-appearance: none;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: rgba(59,130,246,0.45); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group select option { background: var(--bg-card); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; }
+        .stat-box {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 18px 12px; text-align: center;
+        }
+        .stat-box .sn {
+            font-size: 1.7rem; font-weight: 900;
+            background: var(--gradient-blue); -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .stat-box .sl { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-top: 4px; }
+
+        @media (max-width: 900px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -489,12 +557,12 @@
         <div class="nav-container">
             <div class="logo">AGN</div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#conferences">Conferences</a></li>
-                <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+                <li><a href="#about">Services</a></li>
+                <li><a href="#engage">How I Work</a></li>
+                <li><a href="#experience">Background</a></li>
+                <li><a href="#projects">Portfolio</a></li>
+                <li><a href="#publications">Research</a></li>
+                <li><a href="#contact" class="nav-cta">Hire Me</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menu">
                 <span></span><span></span><span></span>
@@ -508,9 +576,10 @@
         <div class="hero-glow-2"></div>
         <div class="hero-content">
             <div class="hero-left">
+                <div class="avail-badge"><span class="avail-dot"></span> Available for new engagements</div>
                 <h1>Arun Govind<br><span class="accent">Neelan A</span></h1>
-                <p class="subtitle">Research Scientist | CFD &amp; AI/ML Specialist</p>
-                <p class="tagline">Advancing computational fluid dynamics and physics-informed machine learning for aerospace, energy, and climate applications.</p>
+                <p class="subtitle">CFD &amp; AI/ML Consultant &mdash; Ph.D., IIST</p>
+                <p class="tagline">I help engineering teams cut simulation time, build physics-informed AI models, and design custom solvers for aerospace, energy, and climate applications.</p>
                 <div class="hero-meta">
                     <span class="meta-item">&#128205; Kanyakumari, Tamil Nadu</span>
                     <a href="https://www.linkedin.com/in/arun-govind-neelan" target="_blank" rel="noreferrer">
@@ -523,9 +592,9 @@
                     </a>
                 </div>
                 <div class="hero-btns">
-                    <a href="#projects" class="btn btn-primary">Research &amp; Projects &rarr;</a>
-                    <a href="#publications" class="btn btn-outline">Publications</a>
-                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    <a href="#contact" class="btn btn-primary">Work With Me &rarr;</a>
+                    <a href="#about" class="btn btn-outline">View Services</a>
+                    <a href="#projects" class="btn btn-outline">Portfolio</a>
                 </div>
             </div>
             <div class="hero-avatar">
@@ -538,40 +607,40 @@
     <section id="about">
         <div class="container">
             <div class="section-header reveal">
-                <div class="label">Expertise</div>
-                <h2>Core Competencies</h2>
-                <p>Deep expertise at the intersection of computational physics, numerical methods, and AI</p>
+                <div class="label">Services</div>
+                <h2>What I Can Do For You</h2>
+                <p>End-to-end consulting across simulation, physics-informed AI, and scientific software — delivered with research-grade rigour</p>
             </div>
             <div class="comp-grid">
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#127759;</div>
-                    <h3>Computational Fluid Dynamics</h3>
-                    <p>High-fidelity simulation of compressible &amp; incompressible flows. Custom in-house solvers, RANS/LES turbulence modelling, RANS-LES transition, WENO &amp; shock-capturing schemes, structured &amp; unstructured grids.</p>
+                    <h3>CFD Consulting &amp; Simulation</h3>
+                    <p>High-fidelity flow simulations using OpenFOAM, ANSYS Fluent, or custom in-house solvers. RANS/LES turbulence, shock-capturing (WENO, AUSM+), compressible &amp; incompressible regimes. Deliverable: validated simulation results and a documented workflow your team can own.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#129302;</div>
-                    <h3>AI Agents &amp; LLMs</h3>
-                    <p>Building offline AI agents that automate end-to-end scientific workflows—from problem setup to validated outputs. Leveraging RAG, template-guided generation, and fine-tuned models (e.g., CodeLlama) to deliver robust, low-hallucination results on resource-constrained hardware. Designed for reliable code generation, domain adaptation, and physics-informed reasoning.</p>
+                    <h3>AI Agent Development for Engineering</h3>
+                    <p>Custom offline AI agents that automate repetitive simulation workflows — case setup, meshing, solver configuration, log-parsing — using LLMs with RAG on your internal docs. Runs locally on standard hardware. Deliverable: a working agent integrated with your toolchain.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#129304;</div>
-                    <h3>Numerical Methods for PDEs</h3>
-                    <p>Adaptive-order WENO schemes, flux limiters (AUSM+, Roe, HLLC), Krylov-based implicit solvers with preconditioning, high-resolution finite volume/difference methods, discontinuity-preserving schemes.</p>
+                    <h3>Custom Solver &amp; Numerical Software</h3>
+                    <p>From-scratch or OpenFOAM-extended PDE solvers tailored to your physics: high-order WENO, implicit Krylov methods, GPU-ready JAX/PyFR implementations. I build, validate, and hand over documented, tested code — not just a prototype.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#9925;&#65039;</div>
-                    <h3>AI Weather Nowcasting &amp; Forecasting</h3>
-                    <p>CorrDiff diffusion-based generative models, GraphCast &amp; PG-LODE spatiotemporal forecasting with GNNs, physics-guided latent dynamics, high-resolution regional weather downscaling.</p>
+                    <h3>AI Weather &amp; Climate Modelling</h3>
+                    <p>Diffusion-based downscaling (CorrDiff), GNN spatiotemporal forecasting (GraphCast), physics-guided latent dynamics. I can set up, fine-tune, and benchmark these pipelines on your regional dataset. Deliverable: a reproducible training + inference stack.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#129515;</div>
-                    <h3>Physics-Informed &amp; Data-Driven Modelling</h3>
-                    <p>Reduced-order models (POD, DMD, ANN surrogates), PINNs for forward and inverse problems, noise filtering for experimental/simulation data, physics-informed regularization.</p>
+                    <h3>Physics-Informed AI &amp; Surrogate Models</h3>
+                    <p>PINNs for forward and inverse problems, reduced-order models (POD, DMD, ANN surrogates), denoising and reconstruction from noisy experimental data. Cut your high-fidelity simulation budget by 10–100× with validated surrogates.</p>
                 </div>
                 <div class="comp-card reveal">
                     <div class="comp-icon">&#128736;</div>
-                    <h3>Supersonic &amp; High-Speed Flow Analysis</h3>
-                    <p>Scramjet combustion modelling, shock-induced mixing, spiked combustor optimization, re-entry vehicle aerodynamics, Euler-based adjoint optimization, high-Mach number simulations.</p>
+                    <h3>Aerospace &amp; High-Speed Flow Analysis</h3>
+                    <p>Scramjet combustion, shock-induced mixing, spiked combustor and forebody shape optimisation, re-entry aerodynamics, Euler adjoint design loops. Over a decade of published results in these areas backing every engagement.</p>
                 </div>
             </div>
         </div>
@@ -580,9 +649,9 @@
     <section id="experience">
         <div class="container">
             <div class="section-header reveal">
-                <div class="label">Career</div>
-                <h2>Experience &amp; Education</h2>
-                <p>A journey through aerospace research, computational science, and AI</p>
+                <div class="label">Credentials</div>
+                <h2>Background &amp; Expertise</h2>
+                <p>Research experience across top institutions worldwide, translated into practical consulting outcomes</p>
             </div>
             <div class="timeline-grid">
                 <div>
@@ -674,12 +743,62 @@
         </div>
     </section>
 
+    <section id="engage">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="label">Engagement</div>
+                <h2>How I Work With Clients</h2>
+                <p>Straightforward process from first call to final deliverable</p>
+            </div>
+            <div class="engage-grid">
+                <div class="engage-card reveal">
+                    <span class="engage-num">01</span>
+                    <h4>Discovery Call</h4>
+                    <p>We spend 30–60 minutes scoping your problem — physics involved, data available, timeline, and what "done" looks like. No cost, no obligation.</p>
+                </div>
+                <div class="engage-card reveal">
+                    <span class="engage-num">02</span>
+                    <h4>Proposal &amp; Scope</h4>
+                    <p>I send a clear written proposal: deliverables, milestones, timeline, and fixed or time-and-materials pricing. No hidden fees.</p>
+                </div>
+                <div class="engage-card reveal">
+                    <span class="engage-num">03</span>
+                    <h4>Execution</h4>
+                    <p>Weekly progress updates with intermediate results. I work asynchronously across time zones and flag blockers early rather than late.</p>
+                </div>
+                <div class="engage-card reveal">
+                    <span class="engage-num">04</span>
+                    <h4>Handover</h4>
+                    <p>Documented code, validated results, and a walkthrough session so your team can maintain and extend the work independently.</p>
+                </div>
+            </div>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:48px;" class="reveal">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 36px;text-align:center;min-width:160px;">
+                    <div style="font-size:2rem;font-weight:900;background:var(--gradient-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">8+</div>
+                    <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:4px;">Years of Research</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 36px;text-align:center;min-width:160px;">
+                    <div style="font-size:2rem;font-weight:900;background:var(--gradient-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">12+</div>
+                    <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:4px;">Projects Delivered</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 36px;text-align:center;min-width:160px;">
+                    <div style="font-size:2rem;font-weight:900;background:var(--gradient-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">20+</div>
+                    <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:4px;">Publications &amp; Talks</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 36px;text-align:center;min-width:160px;">
+                    <div style="font-size:2rem;font-weight:900;background:var(--gradient-blue);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">3</div>
+                    <div style="font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:4px;">Institutions (Post-Doc)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
         <div class="container">
             <div class="section-header reveal">
-                <div class="label">Work</div>
-                <h2>Featured Projects &amp; Research</h2>
-                <p>From CFD solvers to AI agents &mdash; solving problems at the frontiers of science</p>
+                <div class="label">Portfolio</div>
+                <h2>Selected Work</h2>
+                <p>A sample of consulting and research projects &mdash; each one a real deliverable, not a demo</p>
             </div>
             <div class="projects-grid">
                 <!-- OpenFOAM AI Agent -->
@@ -1025,7 +1144,7 @@
             <div class="pub-section reveal">
                 <h3>&#128161; Patents</h3>
                 <div class="patents-card">
-                    <p style="font-size:0.92rem;line-height:1.7;color:var(--text-secondary);">Neelan, A.A.G., Vinoth P. and Srinivasan B. &ldquo;<a href="https://drive.google.com/file/d/1EfLcrgRsI2tgZ37tgpVLGs89Ypw235IR/view?usp=drive_link" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">Combustor for Propulsion System</a>&rdquo; (Granted)</p>
+                    <p style="font-size:0.92rem;line-height:1.7;color:var(--text-secondary);">Neelan, A.A.G., Vinoth P. and Srinivasan B. &ldquo;Tandem Spiked Combustor of Scram-jet Engine for Shock-Induced Mixing&rdquo; (Applied)</p>
                 </div>
             </div>
         </div>
@@ -1102,28 +1221,82 @@
     <section id="contact">
         <div class="container">
             <div class="section-header reveal">
-                <div class="label">Reach Out</div>
-                <h2>Let&rsquo;s Connect</h2>
-                <p>Interested in collaboration or consulting? I'm open to academic and industry partnerships.</p>
+                <div class="label">Hire Me</div>
+                <h2>Start a Conversation</h2>
+                <p>Describe your project briefly and I'll get back within 24 hours to schedule a free discovery call.</p>
             </div>
-            <div class="contact-info reveal">
-                <div class="contact-items">
-                    <div class="c-item">
-                        <div class="c-icon e">&#9993;</div>
-                        <div class="c-text"><div class="clabel">Email</div><div class="cvalue">arungovindneelan@gmail.com</div></div>
+            <div class="contact-wrapper reveal">
+                <div>
+                    <div class="contact-form-card">
+                        <h3>Project Inquiry</h3>
+                        <p>Tell me what you're trying to solve and I'll tell you if I can help.</p>
+                        <form id="inquiryForm" action="https://api.web3forms.com/submit" method="POST">
+                            <!-- Replace YOUR_ACCESS_KEY with the key from web3forms.com -->
+                            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+                            <input type="hidden" name="subject" value="New Consulting Inquiry — AGN Website">
+                            <input type="hidden" name="redirect" value="false">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fname">Name</label>
+                                    <input type="text" id="fname" name="name" placeholder="Jane Smith" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="femail">Email</label>
+                                    <input type="email" id="femail" name="email" placeholder="jane@company.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fservice">Service Area</label>
+                                <select id="fservice" name="service">
+                                    <option value="">Select a service...</option>
+                                    <option>CFD Consulting &amp; Simulation</option>
+                                    <option>AI Agent Development</option>
+                                    <option>Custom Solver / Numerical Software</option>
+                                    <option>Physics-Informed AI &amp; Surrogate Models</option>
+                                    <option>AI Weather &amp; Climate Modelling</option>
+                                    <option>Aerospace &amp; High-Speed Flow Analysis</option>
+                                    <option>Other / Not Sure Yet</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fmsg">Project Brief</label>
+                                <textarea id="fmsg" name="message" placeholder="What problem are you trying to solve? What tools/data do you already have? What does success look like?" required></textarea>
+                            </div>
+                            <button type="submit" id="submitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">Send Inquiry &rarr;</button>
+                            <div id="formResult" style="display:none;margin-top:14px;padding:12px 16px;border-radius:10px;font-size:0.88rem;font-weight:500;"></div>
+                        </form>
                     </div>
-                    <div class="c-item">
-                        <div class="c-icon p">&#128222;</div>
-                        <div class="c-text"><div class="clabel">Phone</div><div class="cvalue">+91-8281313665</div></div>
+                </div>
+                <div>
+                    <div style="margin-bottom:16px;">
+                        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Direct Contact</h3>
+                        <div class="contact-items">
+                            <a href="mailto:arungovindneelan@gmail.com" class="c-item">
+                                <div class="c-icon e">&#9993;</div>
+                                <div class="c-text"><div class="clabel">Email</div><div class="cvalue">arungovindneelan@gmail.com</div></div>
+                            </a>
+                            <div class="c-item">
+                                <div class="c-icon p">&#128222;</div>
+                                <div class="c-text"><div class="clabel">Phone / WhatsApp</div><div class="cvalue">+91-8281313665</div></div>
+                            </div>
+                            <a href="https://www.linkedin.com/in/arun-govind-neelan" target="_blank" rel="noreferrer" class="c-item">
+                                <div class="c-icon l">in</div>
+                                <div class="c-text"><div class="clabel">LinkedIn</div><div class="cvalue">arun-govind-neelan</div></div>
+                            </a>
+                            <a href="https://github.com/AGN000" target="_blank" rel="noreferrer" class="c-item">
+                                <div class="c-icon g">&#9670;</div>
+                                <div class="c-text"><div class="clabel">GitHub</div><div class="cvalue">AGN000</div></div>
+                            </a>
+                        </div>
                     </div>
-                    <a href="https://www.linkedin.com/in/arun-govind-neelan" target="_blank" rel="noreferrer" class="c-item">
-                        <div class="c-icon l">in</div>
-                        <div class="c-text"><div class="clabel">LinkedIn</div><div class="cvalue">arun-govind-neelan</div></div>
-                    </a>
-                    <a href="https://github.com/AGN000" target="_blank" rel="noreferrer" class="c-item">
-                        <div class="c-icon g">&#9670;</div>
-                        <div class="c-text"><div class="clabel">GitHub</div><div class="cvalue">AGN000</div></div>
-                    </a>
+                    <div style="background:linear-gradient(135deg,rgba(59,130,246,0.06),rgba(99,102,241,0.04));border:1px solid rgba(59,130,246,0.15);border-radius:var(--radius-lg);padding:28px;margin-top:8px;">
+                        <h4 style="font-size:1rem;font-weight:700;margin-bottom:10px;">Typical Engagement Types</h4>
+                        <div style="display:flex;flex-direction:column;gap:10px;font-size:0.88rem;color:var(--text-secondary);">
+                            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--accent-light);font-weight:700;flex-shrink:0;">&#9632;</span><span><strong style="color:var(--text-primary);">Project-based</strong> — defined scope, fixed price, clear deliverables. Best for one-off solver development, simulation studies, or model training.</span></div>
+                            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--indigo);font-weight:700;flex-shrink:0;">&#9632;</span><span><strong style="color:var(--text-primary);">Retainer</strong> — ongoing monthly hours for teams that need a specialist on call. Ideal for iteration-heavy R&amp;D workflows.</span></div>
+                            <div style="display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--emerald);font-weight:700;flex-shrink:0;">&#9632;</span><span><strong style="color:var(--text-primary);">Advisory / Review</strong> — technical review of your simulation setup, model architecture, or numerical methods. A second opinion before you build.</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1131,13 +1304,13 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 Arun Govind Neelan A. All rights reserved.</p>
+            <p>&copy; 2026 Arun Govind Neelan A &mdash; CFD &amp; AI/ML Consulting</p>
             <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#publications">Publications</a>
-                <a href="https://github.com/AGN000" target="_blank" rel="noreferrer">GitHub</a>
+                <a href="#about">Services</a>
+                <a href="#engage">How I Work</a>
+                <a href="#projects">Portfolio</a>
+                <a href="#publications">Research</a>
+                <a href="#contact">Hire Me</a>
             </div>
         </div>
     </footer>
@@ -1437,6 +1610,44 @@ A reproducible, fully offline harness for studying multi-agent LLM behaviour: wh
                 document.body.style.overflow = 'hidden';
             });
         });
+
+        // Contact form — Web3Forms AJAX
+        const inquiryForm = document.getElementById('inquiryForm');
+        if (inquiryForm) {
+            inquiryForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const btn = document.getElementById('submitBtn');
+                const result = document.getElementById('formResult');
+                btn.disabled = true;
+                btn.textContent = 'Sending…';
+                try {
+                    const res = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: new FormData(inquiryForm)
+                    });
+                    const data = await res.json();
+                    if (data.success) {
+                        result.style.display = 'block';
+                        result.style.background = 'rgba(52,211,153,0.08)';
+                        result.style.border = '1px solid rgba(52,211,153,0.25)';
+                        result.style.color = '#34d399';
+                        result.textContent = "Thanks! I'll reply within 24 hours.";
+                        inquiryForm.reset();
+                    } else {
+                        throw new Error(data.message);
+                    }
+                } catch (err) {
+                    result.style.display = 'block';
+                    result.style.background = 'rgba(251,113,133,0.08)';
+                    result.style.border = '1px solid rgba(251,113,133,0.25)';
+                    result.style.color = '#fb7185';
+                    result.textContent = 'Something went wrong — please email me directly.';
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = 'Send Inquiry →';
+                }
+            });
+        }
 
         // Scroll reveal
         const revealObserver = new IntersectionObserver((entries) => {
